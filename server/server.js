@@ -10,6 +10,10 @@ mongoose.connect(config.db.url, {
 });
 
 middleware(app);
+
+app.set('views', './server/views');
+app.set('view engine', 'pug');
+
 app.use('/', routes);
 
 module.exports = app;
