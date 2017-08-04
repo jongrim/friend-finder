@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  title Coding-Buddies Survey
+body
+  h1 Survey
+  each val in questions
+    //- p= val
+    h3= val.question
+    ul
+      li= val.answer_1.message
+      li= val.answer_2.message
+      li= val.answer_3.message
+      li= val.answer_4.message
+      li= val.answer_5.message
