@@ -7,12 +7,16 @@ head
   title Coding-Buddies Survey
 body
   h1 Survey
-  each val in questions
-    //- p= val
-    h3= val.question
-    ul
-      li= val.answer_1.message
-      li= val.answer_2.message
-      li= val.answer_3.message
-      li= val.answer_4.message
-      li= val.answer_5.message
+  form(onSubmit="")
+    label(for="name") Name: 
+    input(type="text" name="name" placeholder="Name")
+    each val, index in questions
+      div
+        h3= val.question
+        select(name="question" + index + "answer")
+          option= val.answer_1.message
+          option= val.answer_2.message
+          option= val.answer_3.message
+          option= val.answer_4.message
+          option= val.answer_5.message
+    input(type="submit" value="Submit")

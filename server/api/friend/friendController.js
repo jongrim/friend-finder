@@ -9,17 +9,17 @@ exports.getAll = function(req, res) {
 exports.post = function(req, res, next) {
   let friendName = req.body.name;
   let answers = [
+    req.body.question0answer,
     req.body.question1answer,
     req.body.question2answer,
     req.body.question3answer,
     req.body.question4answer,
     req.body.question5answer,
     req.body.question6answer,
-    req.body.question7answer,
-    req.body.question8answer
+    req.body.question7answer
   ];
-  let favoriteEditor = req.body.question9answer;
-  let favoriteLanguage = req.body.question10answer;
+  let favoriteEditor = req.body.question8answer;
+  let favoriteLanguage = req.body.question9answer;
 
   friendModel
     .create({
