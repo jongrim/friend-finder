@@ -1,4 +1,4 @@
-const friendModel = require('./friendModel');
+const friendModel = require('../models/friend/friendModel');
 
 exports.getAll = function(req, res) {
   friendModel.find({}).then(friends => {
@@ -21,6 +21,13 @@ exports.post = function(req, res, next) {
   let favoriteEditor = req.body.question8answer;
   let favoriteLanguage = req.body.question9answer;
 
+  // req.body.currentFriend = {
+  //   name: friendName,
+  //   scaledAnswers: answers,
+  //   favoriteEditor: favoriteEditor,
+  //   favoriteLanguage: favoriteLanguage
+  // };
+
   friendModel
     .create({
       name: friendName,
@@ -30,11 +37,22 @@ exports.post = function(req, res, next) {
     })
     .then(
       function(friend) {
-        res.json(friend);
+        req.body.currentFriend = friend;
+        next();
       },
       function(err) {
         console.log(err);
         next(err);
       }
     );
+};
+
+exports.getAllAddToBody = function(req, res, next) {
+  friendModel.find({}).then(friends => {
+    req.body.friendsArray = friends;
+    next();
+  }, function(err) {
+    console.log(err);
+    next(err);
+  });
 };

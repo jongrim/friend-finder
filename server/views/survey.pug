@@ -7,7 +7,7 @@ head
   title Coding-Buddies Survey
 body
   h1 Survey
-  form(onSubmit="")
+  form(action="/friends" method="post")
     label(for="name") Name: 
     input(type="text" name="name" placeholder="Name")
     each val, index in questions
