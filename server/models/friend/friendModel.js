@@ -6,7 +6,38 @@ const Friend = new Schema({
     type: String,
     required: true
   },
-  scaledAnswers: [{ type: Number, required: true }],
+  question_0: {
+    type: Number,
+    required: true
+  },
+  question_1: {
+    type: Number,
+    required: true
+  },
+  question_2: {
+    type: Number,
+    required: true
+  },
+  question_3: {
+    type: Number,
+    required: true
+  },
+  question_4: {
+    type: Number,
+    required: true
+  },
+  question_5: {
+    type: Number,
+    required: true
+  },
+  question_6: {
+    type: Number,
+    required: true
+  },
+  question_7: {
+    type: Number,
+    required: true
+  },
   favoriteEditor: {
     type: String,
     required: true
