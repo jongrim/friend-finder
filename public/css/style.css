@@ -1,0 +1,64 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 18px; }
+
+.container {
+  background-color: #dedede;
+  padding: 24px 16px; }
+  .container h1 {
+    font-size: 48px;
+    font-weight: 200;
+    padding-bottom: 12px; }
+
+form div {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 0; }
+
+form .surveyQuestion {
+  padding-left: 24px; }
+
+form .surveyQuestion:hover {
+  background-color: #eeeeee; }
+
+form p {
+  margin: 6px 0px; }
+
+form ol {
+  padding-left: 24px; }
+
+form input[type="submit"] {
+  font-weight: 200;
+  font-size: 16px;
+  color: white;
+  background-color: #2171a1;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  margin: 12px 0 0 24px; }
+
+select {
+  width: 150px; }
+
+input[type="text"] {
+  height: 24px;
+  width: 150px;
+  padding-left: 4px; }
+
+button {
+  font-weight: 200;
+  font-size: 16px;
+  color: white;
+  background-color: #2171a1;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1); }
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #06466c;
+  cursor: pointer; }

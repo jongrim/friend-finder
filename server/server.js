@@ -9,6 +9,7 @@ mongoose.connect(config.db.url, {
   useMongoClient: true
 });
 
+app.use(express.static('public'));
 middleware(app);
 
 app.set('views', './server/views');

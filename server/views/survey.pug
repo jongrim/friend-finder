@@ -5,18 +5,43 @@ head
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
   meta(http-equiv="X-UA-Compatible", content="ie=edge")
   title Coding-Buddies Survey
+  link(rel="stylesheet" href="css/style.css")
 body
-  h1 Survey
-  form(action="/friends" method="post")
-    label(for="name") Name: 
-    input(type="text" name="name" placeholder="Name")
-    each val, index in questions
+  div.container
+    h1 Survey
+    form(action="/friends" method="post")
       div
-        h3= val.question
-        select(name="question" + index + "answer")
-          option= val.answer_1.message
-          option= val.answer_2.message
-          option= val.answer_3.message
-          option= val.answer_4.message
-          option= val.answer_5.message
-    input(type="submit" value="Submit")
+        label(for="name") Name: 
+        input(type="text" name="name" placeholder="Name" required)
+      div
+        h2 For the following questions, please rate your agreement with the statement using the following scale:
+        ol
+          li Strongly disagree
+          li Somewhat disagree
+          li Neutral / no opinion
+          li Somewhat agree
+          li Strongly agree
+      - var n = 0;
+      while n < 8
+        div.surveyQuestion
+          p= questions[n].question
+          select(name="question" + n + "answer" required)
+            option= questions[n].answer_1.message
+            option= questions[n].answer_2.message
+            option= questions[n].answer_3.message
+            option= questions[n].answer_4.message
+            option= questions[n].answer_5.message
+        - n++
+      div
+        h2 For the following questions, please select the statement you most agree with:
+      while n < 10
+        div.surveyQuestion
+          p= questions[n].question
+          select(name="question" + n + "answer" required)
+            option= questions[n].answer_1.message
+            option= questions[n].answer_2.message
+            option= questions[n].answer_3.message
+            option= questions[n].answer_4.message
+            option= questions[n].answer_5.message
+        - n++
+      input(type="submit" value="Submit")
