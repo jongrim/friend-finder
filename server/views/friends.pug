@@ -4,9 +4,17 @@ head
   meta(charset="UTF-8")
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
   meta(http-equiv="X-UA-Compatible", content="ie=edge")
-  
+  link(rel="stylesheet" href="css/style.css")
   title Coding-Buddies Friends
 body
-  h1 Friends
-  each val in data
-    p= val
+  div.container
+    h1 Matches for #{data.name}
+    if data.friendsArray < 1
+      p No matches!
+    else
+      each val in data.friendsArray
+        p= val.name
+    a(href='/')
+      button Go Home
+    a(href='/survey')
+      button Take the Survey Again
