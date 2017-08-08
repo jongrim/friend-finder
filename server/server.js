@@ -5,6 +5,8 @@ const routes = require('./routes/');
 const config = require('./config/config');
 const mongoose = require('mongoose');
 
+console.log(config.db.url);
+
 mongoose.connect(config.db.url, {
   useMongoClient: true
 });
